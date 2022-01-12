@@ -26,6 +26,8 @@ function getCity (cityRequested){
 		})
 		.then(data => {
 			console.log(data);
+            let {lat,lon} = data[0];
+			weatherRequest(lat,lon)
 		})
 		.catch(err => {
 			console.error(err);
