@@ -5,6 +5,17 @@ currentWeatherEl = document.getElementById('currentWeather');
 fiveDayWeatherEl =document.getElementById('5dayWeather');
 pastSearches =document.getElementById('searchList');
 
+// Creating a function to execute search
+function search(cityInput){
+	getCity(cityInput)
+}
+
+// Create an event listener to execute search function
+submitBtn.addEventListener("click", function(event){
+	let citySearched = searchInput.value;
+	search(citySearched);
+})
+
 // Creating a fetch request to determine the weather at a specific lattitude and longitude
 function weatherRequest(latitude, longitude) {
 	fetch("https://api.openweathermap.org/data/2.5/onecall?lat="+latitude+"&lon="+longitude+"&exclude=minutely,hourly&appid=00e50f3e30c93092b592e69d5a4564df", {
@@ -41,4 +52,4 @@ function getCity (cityRequested){
 		});    
 }
 
-console.log(getCity('Dallas'))
+// console.log(getCity('Dallas'))
