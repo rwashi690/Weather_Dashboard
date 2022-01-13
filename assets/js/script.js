@@ -34,4 +34,4 @@ function getCity (cityRequested){
 		});    
 }
 
-console.log(getCity('Dallas'))
+// console.log(getCity('Dallas'))

@@ -1,23 +1,59 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Weather Dashboard</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="./assets/css/">
-  </head>
-  <body>
-    
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Weather Dashboard</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./assets/css/">
+</head>
+
+<body>
+  <!-- Top of website/header -->
+  <header>
+    <div class="jumbotron">
+      <h1>Weather Dashboard</h1>
+    </div>
+  </header>
+
+  <!-- Body of website -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <nav class="navbar navbar-light">
+          <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Type city here" id="weatherInput"
+              aria-label="Search">
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" id="weatherSubmit">Search</button>
+          </form>
+        </nav>
+      </div>
+      <div class="col-sm-8" id="currentWeather">
+        <!-- The current forecast goes here -->
+      </div>
+    </div>
+
+    <div class="row top_margin">
+      <div class="col-sm-4">
+        <h4 class="text-center">Past Searches</h4>
+        <ul id="searchList"></ul>
+      </div>
+      <div class="col-sm-8" id="5dayWeather">
+        <!-- The 5-day forcast goes here -->
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Website footer goes here-->
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="./assets/js/script.js"></script>
-  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="./assets/js/script.js"></script>
+</body>
+
 </html>
