@@ -9,10 +9,16 @@ tempEl = document.getElementById('temp');
 windEl = document.getElementById('wind');
 humidEl	= document.getElementById('humid');
 uvEl = document.getElementById('uv');
+cityNameEl = document.getElementById('cityName');
 
 
 // Creating a function to execute search
 function search(cityInput){
+	// let cityTag = document.createElement("h3");
+	// cityTag.textContent = cityInput;
+	// // cityTag.className = 
+	// currentWeatherEl.appendChild(cityTag);
+	cityNameEl.textContent =cityInput
 	getCityCurrent(cityInput)
 }
 
@@ -21,6 +27,7 @@ submitBtn.addEventListener("click", function(event){
 	event.preventDefault();
 	let citySearched = searchInput.value;
 	search(citySearched);
+
 })
 
 // Creating a fetch request to determine the weather at a specific lattitude and longitude
