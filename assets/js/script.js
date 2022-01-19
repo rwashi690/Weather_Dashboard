@@ -106,9 +106,9 @@ function weatherRequestCurrent(latitude, longitude) {
 			let uv=data.current.uvi
 			currentData.push(temperature, wind, humidity, uv)
 			// Dynamically add those elements to the HTML page
-			tempEl.textContent="Temperature(°F): "+currentData[0]
-			windEl.textContent="Wind (mi/hr): "+currentData[1];
-			humidEl.textContent="Humidity(%): "+currentData[2];
+			tempEl.textContent="Temperature: "+currentData[0]+"°F";
+			windEl.textContent="Wind: "+currentData[1]+" miles/hour";
+			humidEl.textContent="Humidity: "+currentData[2]+"%";
 			uvEl.textContent="UV Index: "+currentData[3];
 			// Define 5 day data
 			const {daily} = data
@@ -124,15 +124,18 @@ function weatherRequestCurrent(latitude, longitude) {
 				const brEl= document.createElement("br")
 				const cardBody1El =document.createElement("div")
 				const cardBody2El = document.createElement("div")
+				const cardBody3El = document.createElement("div")
 				const imgEl = document.createElement("img")
 				imgEl.src= `http://openweathermap.org/img/wn/${daily[i].weather[0].icon}.png`
 				cardHeaderEl.textContent = days[i]
 				cardBodyEl.appendChild(imgEl)
-				cardBody1El.textContent = `${daily[i].temp.max}/${daily[i].temp.min}`
-				cardBody2El.textContent = `${daily[i].wind_speed}`
+				cardBody1El.textContent = `H: ${daily[i].temp.max}°F / L: ${daily[i].temp.min}°F`
+				cardBody2El.textContent = `Wind Speed: ${daily[i].wind_speed} miles/hour`
+				cardBody3El.textContent = `Humidity:${daily[i].humidity}%`
 				cardBodyEl.appendChild(cardBody1El)
 				cardBodyEl.appendChild(brEl)
 				cardBodyEl.appendChild(cardBody2El)
+				cardBodyEl.appendChild(cardBody3El)
 				cardEl.appendChild(cardHeaderEl)
 				cardEl.appendChild(cardBodyEl)
 				fiveDayWeatherEl.appendChild(cardEl)
